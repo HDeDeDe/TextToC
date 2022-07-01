@@ -28,7 +28,7 @@ std::string escaped(std::ifstream& input)
             case '\v':  output.append("\\v");        break;
             case '"':   output.append("\\\"");       break;
             case '\'':  output.append("\\'");        break;
-			case '\?':  output.append("\\\?");       break;
+            case '\?':  output.append("\\\?");       break;
             case '%':   output.append("%%");         break;
             default:    output.push_back(c);         break;
         }
