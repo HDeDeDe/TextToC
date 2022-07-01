@@ -1,0 +1,1 @@
+C:\msys64\usr\bin\make.exe WIN64
