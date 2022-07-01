@@ -1,8 +1,14 @@
+//---------------------------------------------------------------------------
+// Includes
+//---------------------------------------------------------------------------
 #include <iostream>
 #include <fstream>
 #include <string>
+//---------------------------------------------------------------------------
+// Functions
+//---------------------------------------------------------------------------
 
-int strlen(char *p)
+int strlen(char *p) //I don't want to include its header
 {
     int c=0;
     while(*p!='\0')
@@ -13,6 +19,7 @@ int strlen(char *p)
     return(c);
 }
 
+//Read every character and replace any escapable characters
 std::string escaped(std::ifstream& input)
 {
     std::string output;
@@ -38,13 +45,26 @@ std::string escaped(std::ifstream& input)
     return output;
 }
 
+//---------------------------------------------------------------------------
+// Main
+//---------------------------------------------------------------------------
 int main(int argc, char *argv[])
 {
+    //Don't run if a file path is not provided.
+    //This can do weird things if you provide an invalid path, but it shouldn't harm anything
     if(argc == 2)
     {
+        //---------------------------------------------------------------------------
+        //Variables
+        //---------------------------------------------------------------------------
+
+        //The name of the file you put in
         std::string filename;
+        //Pointer for the filename.
         size_t ptr = strlen(argv[1]);
+        //Loop check
         bool check = false;
+
         for(char c; !check; ptr--)
         {
             c = argv[1][ptr];
@@ -80,6 +100,7 @@ int main(int argc, char *argv[])
             }
             std::cout << std::endl;
         }
+        
         filename.pop_back();
         std::ifstream input_file;
         input_file.open(argv[1], std::ios::binary);
