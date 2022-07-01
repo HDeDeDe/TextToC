@@ -1,1 +1,1 @@
-C:\msys64\usr\bin\make.exe WIN64
+g++ -fdiagnostics-color=always -std=c++17 -o3 main.cpp -o ./ConvertToCString.exe
