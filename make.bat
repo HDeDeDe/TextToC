@@ -1,1 +1,1 @@
-g++ -fdiagnostics-color=always -std=c++17 -o3 main.cpp -o ./ConvertToCString.exe
+g++ -fdiagnostics-color=always -std=c++17 -o3 main.cpp -o ./TextToC.exe
